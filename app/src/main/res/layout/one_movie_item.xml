@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/movie_example_cardID"
     android:layout_width="match_parent"
-    android:layout_height="250dp">
+    android:layout_height="245dp">
 
     <ImageView
         android:id="@+id/movie_coverID_oneItem"
@@ -33,5 +33,6 @@
         android:textSize="23sp"
         android:textStyle="bold"
         tools:text="AAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+
 
 </RelativeLayout>

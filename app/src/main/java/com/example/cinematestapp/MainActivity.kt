@@ -1,16 +1,10 @@
 package com.example.cinematestapp
 
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.cinematestapp.api.SimpleApi
-import com.example.cinematestapp.moviesData.MoviesData
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.t_e_s_t_fragment.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.android.synthetic.main.one_movie_item.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setUpSliderTab()
-
     }
 
     private fun setUpSliderTab() {

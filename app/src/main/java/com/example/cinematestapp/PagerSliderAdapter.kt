@@ -9,28 +9,26 @@ class PagerSliderAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapte
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
-            0-> TEST()
-            1 -> FragmentDrama1()
-            //2 -> FragmentTwo2Docs()
-//            2 -> FragmentThree3Theatralical()
-//            3 -> FragmentFour4FeatureFilms()
-//            4 -> FragmentFive5Animation()
+            0 -> FragmentDrama1()
+            1 -> FragmentDocks2()
+            2 -> FragmentTheatralical3()
+            3 -> FragmentFuture4()
+            4 -> FragmentAnimation5()
             else -> getItem(position)
         }
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when (position) {
-            0-> "TestFragment"
-            1 -> "Drama"
-        //    2 -> "Docs"
-//            2 -> "Theater"
-//            3 -> "Features"
+            0 -> "Drama"
+            1 -> "Docs"
+            2 -> "Theater"
+            3 -> "Features"
             else -> "Animation"
         }
     }
 
     override fun getCount(): Int {
-        return 2
+        return 5
     }
 }
