@@ -16,12 +16,12 @@ import retrofit2.http.Query
 
 interface SimpleApi {
 
-    @GET("./api/main_page")
+    @GET("./api/main_page") 
     fun searchMovie(): Call<MoviesData>
 
     companion object {
 
-        operator fun invoke(): SimpleApi {
+        operator fun invoke(): SimpleApi { // настраиваем retrofit и  okHttp
 
             val loggingInterceptor = HttpLoggingInterceptor()
             loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
@@ -30,7 +30,6 @@ interface SimpleApi {
                 .addInterceptor(loggingInterceptor)
                 .build()
 
-
             return Retrofit.Builder()
                 .baseUrl("https://signalmediacorp.com")
                 .client(okHttpClient)
@@ -38,7 +37,6 @@ interface SimpleApi {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
                 .create(SimpleApi::class.java)
-
         }
     }
 }
