@@ -2,7 +2,6 @@ package com.example.cinematestapp.fragments
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,24 +16,24 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class FragmentDrama1 : Fragment() {
+class FragmentAnimation5 : Fragment() {
 
     companion object {
-        fun newInstance() = FragmentDrama1()
+        fun newInstance() = FragmentAnimation5()
     }
 
-    private lateinit var viewModelDrama_1: FragmentDrama1ViewModel
+    private lateinit var viewModel5: FragmentAnimation5ViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment__drama_1_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_animation5_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModelDrama_1 = ViewModelProvider(this).get(FragmentDrama1ViewModel::class.java)
+        viewModel5 = ViewModelProvider(this).get(FragmentAnimation5ViewModel::class.java)
         getData()
     }
 
@@ -45,9 +44,9 @@ class FragmentDrama1 : Fragment() {
 //                    Log.d("Get response","Response get! ")
                     recycle_view_for_moview.layoutManager = LinearLayoutManager(activity)
 
-                    recycle_view_for_moview.adapter = PhotoAdapter( //отправляем ответ в адаптер, чтобы отобразить данные
+                    recycle_view_for_moview.adapter = PhotoAdapter(
                         listOf(response.body()!!),
-                        0
+                        4
                     )
                 }
             }
@@ -57,4 +56,5 @@ class FragmentDrama1 : Fragment() {
             }
         })
     }
+
 }

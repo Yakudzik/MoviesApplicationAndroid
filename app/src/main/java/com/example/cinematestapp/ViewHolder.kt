@@ -19,6 +19,6 @@ import java.text.FieldPosition
 class ViewHolder(itemView: View) :
     RecyclerView.ViewHolder(itemView) {
 
-    val title: TextView = itemView.movie_title_cardID_oneItem
+    val title: TextView = itemView.movie_title_cardID_oneItem //берем id для холдера в которые будем записывать данные
     val cover: ImageView = itemView.movie_coverID_oneItem
  }

@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setUpSliderTab()
     }
 
-    private fun setUpSliderTab() {
+    private fun setUpSliderTab() { //слайдер по жанрам
         val myAdapter = PagerSliderAdapter(supportFragmentManager)
         viewpager.adapter = myAdapter
         sliding_tabs.setupWithViewPager(viewpager)

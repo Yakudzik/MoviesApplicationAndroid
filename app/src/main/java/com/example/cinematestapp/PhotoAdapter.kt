@@ -1,36 +1,21 @@
 package com.example.cinematestapp
 
 
-import android.app.LauncherActivity
-import android.app.ProgressDialog.show
+
 import android.view.ViewGroup
 import android.content.Context
 import android.content.Intent
-import android.icu.util.LocaleData
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
-import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.view.isInvisible
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.example.cinematestapp.moviesData.ContentX
 import com.example.cinematestapp.moviesData.MoviesData
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.one_movie_item.*
 import kotlinx.android.synthetic.main.one_movie_item.view.*
-import kotlinx.android.synthetic.main.one_page_full_screen.*
-import kotlinx.android.synthetic.main.one_page_full_screen.view.*
-import kotlinx.android.synthetic.main.t_e_s_t_fragment.view.*
-import java.time.format.DateTimeFormatter
+
 
 class PhotoAdapter(
     private val dataList: List<MoviesData>,
     private val frameNumber: Int,
-    //private val lister: ViewHolder
-) :
+ ) :
     RecyclerView.Adapter<ViewHolder>() {
 
     private lateinit var context: Context
@@ -44,10 +29,10 @@ class PhotoAdapter(
 
     override fun getItemCount(): Int {
 
-        return dataList[0].content[frameNumber].content.size
+        return dataList[0].content[frameNumber].content.size // достаем размер категории
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) { //заполняем карточку
 
         val data = dataList[0].content[frameNumber].content[position]
 
@@ -57,15 +42,15 @@ class PhotoAdapter(
             .load(data.cover?.createImageURL)
             .into(holder.cover)
 
-        holder.itemView.movie_coverID_oneItem.setOnClickListener {
+        holder.itemView.movie_coverID_oneItem.setOnClickListener { //клик по карточке
 
             var intent = Intent(context, OneFullScreen::class.java)
-            intent.putExtra("FilmCover", dataList[0].content[frameNumber].content[position].cover?.createImageURL)
+            intent.putExtra("FilmCover", dataList[0].content[frameNumber].content[position].cover?.createImageURL) //передаем данные для полного экрана
             intent.putExtra("FilmName", dataList[0].content[frameNumber].content[position].title)
             intent.putExtra("FilmDate", dataList[0].content[frameNumber].content[position].createdAt)
             intent.putExtra("FilmGenre", dataList[0].content[frameNumber].content[position].genre.title)
 
-            val langSize:Int = dataList[0].content[frameNumber].content[position].languages.size
+            val langSize:Int = dataList[0].content[frameNumber].content[position].languages.size //формирую строку языков
             var langStr =""
             for (i in 0 until langSize)
                 langStr += "${dataList[0].content[frameNumber].content[position].languages[i].title}, "
@@ -74,7 +59,7 @@ class PhotoAdapter(
             context.startActivity(intent)
         }
 
-        Log.d("Hello from click", "Hello from position ${position}")
+       // Log.d("Hello from click", "Hello from position ${position}") //клик по карточке
     }
 }
 

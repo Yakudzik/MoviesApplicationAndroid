@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OneFullScreen">
+
+    <ImageView
+        android:id="@+id/poster"
+        android:layout_width="430dp"
+        android:layout_height="240dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="60dp"
+        app:srcCompat="@drawable/test_movie_cover_img" />
+
+    <TextView
+        android:id="@+id/nazvanie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:maxLines="1"
+        android:textColor="@color/purple_500"
+        android:textSize="25sp"
+        tools:text="Название" />
+
+    <TextView
+        android:id="@+id/data_sozdania"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nazvanie"
+        android:layout_centerHorizontal="false"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@id/poster"
+        android:maxLines="2"
+        android:textColor="@color/purple_500"
+        android:textSize="20sp"
+        tools:text="Дата создания" />
+
+    <TextView
+        android:id="@+id/janre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/data_sozdania"
+        android:layout_toRightOf="@id/poster"
+        android:layout_centerHorizontal="false"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:maxLines="1"
+        android:textColor="@color/purple_500"
+        android:textSize="20sp"
+        tools:text="Жанр" />
+
+    <TextView
+        android:id="@+id/yaziki"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/janre"
+        android:layout_toRightOf="@id/poster"
+        android:layout_centerHorizontal="false"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:maxLines="4"
+        android:textColor="@color/purple_500"
+        android:textSize="20sp"
+        tools:text="Доступные языки" />
+</RelativeLayout>

@@ -8,7 +8,7 @@ import com.example.cinematestapp.fragments.*
 class PagerSliderAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
 
     override fun getItem(position: Int): Fragment {
-        return when (position) {
+        return when (position) {  //задаем позиции фрагментам
             0 -> FragmentDrama1()
             1 -> FragmentDocks2()
             2 -> FragmentTheatralical3()
@@ -19,7 +19,7 @@ class PagerSliderAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapte
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        return when (position) {
+        return when (position) { //задаем тайтлы фрагментам
             0 -> "Drama"
             1 -> "Docs"
             2 -> "Theater"
